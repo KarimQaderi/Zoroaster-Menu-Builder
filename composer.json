@@ -1,0 +1,37 @@
+{
+    "name": "karim-qaderi/zoroaster-menu-builder",
+    "description": "Menu Builder Tool for Zoroaster.",
+    "keywords": [
+        "laravel",
+        "zoroaster",
+        "menu",
+        "builder"
+    ],
+    "authors": [
+        {
+            "name": "Karim Qaderi",
+            "email": "karimqaderi1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KarimQaderi\\ZoroasterMenuBuilder\\": "src/"
+        },
+        "files": [
+          "src/Http/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KarimQaderi\\ZoroasterMenuBuilder\\MenuBuilderServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
