@@ -20,13 +20,11 @@
     ],
 ```
 
-```bash
-composer update
-```
-
 بعد کدای زیر رو به ترتیب اجرا کنید :
 
 ```bash
+composer update
+
 php artisan vendor:publish --tag=menu-builder-migration
 php artisan migrate
 
@@ -43,7 +41,6 @@ php artisan vendor:publish --tag=menu-builder-assets
 
 {!! menu_builder('main', 'parent-class', 'child-class', 'dl', 'dd') !!}
 ```
-
 
 ```php
 {!! menu_json('main') !!}
