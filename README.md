@@ -1,11 +1,7 @@
-# Nova Menu Builder
+# Zoroaster Menu Builder
 
-This tool allows you to create menus in Laravel Nova
+![Zoroaster Menu Builder](./img/img.pmg)
 
-<img width="1439" alt="menu builder Home" src="https://user-images.githubusercontent.com/42798230/50765532-7632ea80-1276-11e9-8fed-ec1f6d53983a.png">
-
-
-<img width="1439" alt="Menu Builder Items" src="https://user-images.githubusercontent.com/42798230/50765390-06bcfb00-1276-11e9-9e82-fd7956507c78.png">
 
 
 ## نصب 
