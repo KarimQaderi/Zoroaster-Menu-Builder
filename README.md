@@ -34,32 +34,7 @@ php artisan vendor:publish --tag=menu-builder-assets
 ```
 
 
-## Usage
-
-Next up, you must register the tool with Nova. This is typically done in the tools method of the NovaServiceProvider.
-
-```php
-// in app/Providers/NovaServiceProvider.php
-
-// ...
-
-
-public function tools()
-{
-    return [
-        // ...
-        new \Infinety\MenuBuilder\MenuBuilder(),
-    ];
-}
-```
-
-## Helpers
-
-There are two helpers built in for your blades
-
-* **menu_builder('slug')**.    
-
-	Creates an html menu for given slug. Extra options are not required. By default tags are `ul` and `li`, and without html classes.
+## Helper Function
 
 ```php
 {!! menu_builder('main') !!}
@@ -69,79 +44,31 @@ There are two helpers built in for your blades
 {!! menu_builder('main', 'parent-class', 'child-class', 'dl', 'dd') !!}
 ```
 
-* **menu_json('slug')**.   
-
-	Returns a json with all items for given slug.
 
 ```php
 {!! menu_json('main') !!}
 ```
 
 
-## Localization
 
-Set your translations in the corresponding xx.json file located in /resources/lang/vendor/nova
+## سطع دسترسی کلی 
 
+برای اینکه سطع دسترسی رو بزارید فایل `app/Providers/ZoroasterServiceProvider.php` رو باز کنید کد زیر رو در `boot` قرار دهید. 
 
-```json
-"Menu Builder": "Menu Builder",
-"Menu Items": "Menu Items",
-"Add item": "Add item",
-"Delete item": "Delete item",
-"Are you sure to delete this menu item?": "Are you sure to delete this menu item?",
-"Take care. All children items will be deleted cause you're deleting the parent.": "Take care. All children items will be deleted cause you're deleting the parent.",
-"Cancel": "Cancel",
-"Yes, remove!": "Yes, remove!",
-"Add Menu item": "Add Menu item",
-"Name": "Name",
-"Slug": "Slug",
-"Menu Helper": "Menu Helper",
-"Link type": "Link type",
-"Choose an option": "Choose an option",
-"Static Url": "Static Url",
-"Dynamic Route": "Dynamic Route",
-"URL": "URL",
-"Route": "Route",
-"Parameters": "Parameters",
-"Open in": "Open in",
-"Same window": "Same window",
-"New window": "New window",
-"Classes": "Classes",
-"Create menu item": "Create menu item",
-"Update menu item": "Update menu item",
-"Item removed successfully!": "Item removed successfully!",
-"Item created!": "Item created!",
-"Item updated!": "Item updated!",
-"Menu reordered!": "Menu reordered!",
-"Error on server!": "Error on server!",
-"Enabled": "Enabled",
-"Disabled": "Disabled"
+```php
+/**
+ * Bootstrap any application services.
+ *
+ * @return void
+ */
+protected function boot()
+{
+    Gate::define('ZoroasterMenuBuilder', function ($user) {
+        return in_array($user->email, [
+            'karimqaderi1@gmail.com',
+        ]);
+    });
+}
 ```
 
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security
-
-If you discover any security related issues, please email apps@infinety.es instead of using the issue tracker.
-
-## Postcardware
-
-You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
-
-Our address is: Infinety - Calle Comedias, 8 Floor 3, Suite 5 46003 Valencia (Spain).
-
-## Credits
-
-- [Eric Lagarda](https://github.com/Krato)
-- [Ralph Huwiler (vue-nestable)](https://github.com/rhwilr/vue-nestable)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
