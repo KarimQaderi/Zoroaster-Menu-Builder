@@ -76,7 +76,7 @@
 
             $this->publishes([
                 __DIR__ . '/../dist' => public_path('Zoroaster-assets/ZoroasterMenuBuilder')
-            ] , 'Zoroaster-assets');
+            ] , 'menu-builder-assets');
         }
 
         /**

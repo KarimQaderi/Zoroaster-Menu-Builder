@@ -8,19 +8,33 @@ This tool allows you to create menus in Laravel Nova
 <img width="1439" alt="Menu Builder Items" src="https://user-images.githubusercontent.com/42798230/50765390-06bcfb00-1276-11e9-9e82-fd7956507c78.png">
 
 
-## Installation
+## نصب 
 
-You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
+فایل composer.json باز کنید و کد زیر رو قرار دهید :
 
-```bash
-composer require infinety-es/nova-menu-builder
+```json
+    "require": {
+        "karim-qaderi/zoroaster-menu-builder": "*"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/KarimQaderi/Zoroaster-Menu-Builder.git"
+        }
+    ],
 ```
 
-Then you should publish the database table file and migrate it:
+```bash
+composer update
+```
+
+بعد کدای زیر رو به ترتیب اجرا کنید :
 
 ```bash
 php artisan vendor:publish --tag=menu-builder-migration
 php artisan migrate
+
+php artisan vendor:publish --tag=menu-builder-assets
 ```
 
 
