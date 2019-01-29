@@ -1,6 +1,6 @@
 # Zoroaster Menu Builder
 
-![Zoroaster Menu Builder](./img/img.pmg)
+![Zoroaster Menu Builder](https://raw.githubusercontent.com/KarimQaderi/Zoroaster-Menu-Builder/master/img/img.png)
 
 
 
