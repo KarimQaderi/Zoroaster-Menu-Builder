@@ -34,7 +34,7 @@
             ]);
 
             Zoroaster::SidebarMenus([
-                MenuItem::make()->resource('menu-builder')->icon('list') ,
+                MenuItem::make()->resource('menu-builder')->icon('list')->gate('ZoroasterMenuBuilder') ,
             ]);
 
 
@@ -56,7 +56,7 @@
             }
 
 
-            Route::middleware(['Zoroaster' , 'can:Zoroaster', 'can:ZoroasterMenuBuilder'])
+            Route::middleware(['web' , 'Zoroaster' , 'can:Zoroaster' , 'can:ZoroasterMenuBuilder'])
                 ->namespace('\KarimQaderi\ZoroasterMenuBuilder\Http\Controllers')
                 ->prefix('Zoroaster-vendor/menu-builder')
                 ->as('Zoroaster-menu-builder.')
