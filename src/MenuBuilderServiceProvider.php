@@ -34,7 +34,7 @@
             ]);
 
             Zoroaster::SidebarMenus([
-                MenuItem::make()->resource('menu-builder')->icon('list')->gate('ZoroasterMenuBuilder') ,
+                MenuItem::make()->resource('menu-builder')->icon('list') ,
             ]);
 
 
